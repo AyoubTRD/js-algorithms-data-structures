@@ -77,7 +77,7 @@ class SinglyLinkedList {
 
   insert(value, index = 0) {
     if (index === 0) return this.prepend(value);
-    if (index === this.length - 1) return this.append(value);
+    if (index === this.length) return this.append(value);
     this.length++;
     const node = new Node(value);
     const pre = this.get(index - 1, true);
