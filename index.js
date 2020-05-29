@@ -97,3 +97,4 @@ const SinglyLinkedList = require("./singly_linked_lists");
 const DoublyLinkedList = require("./doubly_linked_lists");
 const Stack = require("./stack");
 const Queue = require("./queue");
+const BinarySearchTree = require("./binary_search_tree");
