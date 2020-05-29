@@ -92,3 +92,6 @@ function test(name, fn, ...args) {
 // test("Selection sort", selectionSort, [...arr8]);
 // test("Radix sort", radixSort, [...arr8]);
 // console.log("=".repeat(45));
+
+const SinglyLinkedList = require("./singly_linked_lists");
+const DoublyLinkedList = require("./doubly_linked_lists");
