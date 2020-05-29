@@ -8,21 +8,21 @@ class Node {
 class Stack {
   constructor() {
     this.last = null;
-    this.length = 0;
+    this.size = 0;
   }
 
   push(value) {
     const node = new Node(value);
     node.prev = this.last;
     this.last = node;
-    return ++this.length;
+    return ++this.size;
   }
 
   pop() {
-    if (!this.length) return null;
+    if (!this.size) return null;
     const node = this.last;
     this.last = this.last.prev;
-    this.length--;
+    this.size--;
     return node.value;
   }
 }
