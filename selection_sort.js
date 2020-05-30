@@ -20,5 +20,3 @@ function getMin(arr) {
   }
   return min;
 }
-
-module.exports = selectionSort;

@@ -29,4 +29,3 @@ function radixSort(arr) {
   return arr;
 }
 
-module.exports = radixSort;

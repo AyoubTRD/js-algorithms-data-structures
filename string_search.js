@@ -13,5 +13,3 @@ function searchString(str, search) {
   }
   return indexes;
 }
-
-module.exports = searchString;

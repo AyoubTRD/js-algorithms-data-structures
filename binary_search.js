@@ -12,4 +12,3 @@ function binarySearch(arr, value) {
   return arr[middle] === value ? middle : -1;
 }
 
-module.exports = binarySearch;

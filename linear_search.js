@@ -5,4 +5,3 @@ function linearSearch(arr, value) {
   return -1;
 }
 
-module.exports = linearSearch;

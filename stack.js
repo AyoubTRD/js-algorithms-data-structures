@@ -26,5 +26,3 @@ class Stack {
     return node.value;
   }
 }
-
-module.exports = Stack;

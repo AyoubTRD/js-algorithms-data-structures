@@ -93,8 +93,8 @@ function test(name, fn, ...args) {
 // test("Radix sort", radixSort, [...arr8]);
 // console.log("=".repeat(45));
 
-const SinglyLinkedList = require("./singly_linked_lists");
-const DoublyLinkedList = require("./doubly_linked_lists");
-const Stack = require("./stack");
-const Queue = require("./queue");
-const BinarySearchTree = require("./binary_search_tree");
+// const SinglyLinkedList = require("./singly_linked_lists");
+// const DoublyLinkedList = require("./doubly_linked_lists");
+// const Stack = require("./stack");
+// const Queue = require("./queue");
+// const BinarySearchTree = require("./binary_search_tree");

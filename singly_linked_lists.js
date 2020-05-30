@@ -145,5 +145,3 @@ class SinglyLinkedList {
     );
   }
 }
-
-module.exports = SinglyLinkedList;

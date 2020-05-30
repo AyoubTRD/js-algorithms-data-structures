@@ -24,4 +24,3 @@ function mergeSort(arr) {
   return merge(left, right);
 }
 
-module.exports = mergeSort;
