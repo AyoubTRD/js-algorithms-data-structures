@@ -85,7 +85,6 @@ class BinarySearchTree {
   }
 
   breadthFirstSearch() {
-      if (!this.root) return []
       const values = []
       const queue = new Queue()
       queue.enqueue(this.root)
@@ -99,7 +98,40 @@ class BinarySearchTree {
       return values
   }
 
-  toArray = this.breadthFirstSearch
+  DFSPreOrder() {
+    const values = []
+    function helper(node) {
+      values.push(node.value)
+      if (node.left) helper(node.left)
+      if (node.right) helper(node.right)
+    }
+    helper(this.root)
+    return values
+  }
+
+  DFSPostOrder() {
+    const values = []
+    function helper(node) {
+      if (node.left) helper(node.left)
+      if (node.right) helper(node.right)
+      values.push(node.value)
+    }
+    helper(this.root)
+    return values
+  }
+
+  DFSInOrder() {
+    const values = []
+    function helper(node) {
+      if (node.left) helper(node.left)
+      values.push(node.value)
+      if (node.right) helper(node.right)
+    }
+    helper(this.root)
+    return values
+  }
+
+  toArray = this.DFSInOrder
 }
 
 let tree = new BinarySearchTree(0);
