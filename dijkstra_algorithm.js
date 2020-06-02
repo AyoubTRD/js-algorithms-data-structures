@@ -1,4 +1,4 @@
-const swap = (arr, i1, i2) => [arr[i1], arr[i2]] = [arr[i2], arr[i1]]
+let swap = (arr, i1, i2) => [arr[i1], arr[i2]] = [arr[i2], arr[i1]]
 
 class Node {
     constructor(value, priority=null) {
@@ -42,7 +42,7 @@ class PriorityQueue {
         this.nodes.push(node)
         if (this.nodes.length === 1) return value
         let index = this.nodes.length - 1
-        while (this.nodes[index].priority < this.nodes[Math.floor((index - 1) / 2)].priority && index > 0) {
+        while (index > 0 && this.nodes[index].priority < this.nodes[Math.floor((index - 1) / 2)].priority) {
             swap(this.nodes, index, Math.floor((index - 1) / 2))
             index = Math.floor((index - 1) / 2)
         }
@@ -140,14 +140,53 @@ class WeightedGraph {
         helper()
         return Object.keys(visited)
     }
+
+    dijkstra(start, end) {
+        if (!(this.adjacencyList[start] || this.adjacencyList[end])) return
+        const visited = {}
+        const distances = {}
+        const queue = new PriorityQueue()
+
+        for (const vertex of this.adjacencyList) {
+            if (vertex === start) {
+                distances[vertex] = 0
+                queue.enqueue(vertex, 0)
+                continue
+            }
+            distances[vertex] = Infinity
+            queue.enqueue(vertex, Infinity)
+        }
+
+        const previous = {}
+
+        let vertex = queue.dequeue()
+
+        while(vertex) {
+            if (vertex === end) break
+            // Calculate distance from start - vertex
+            if (distance < distances[vertex]) {
+                distances[vertex] === distance
+                previous[vertex] = true
+                queue.enqueue(vertex, distance)
+            }
+            vertex = queue.dequeue()            
+        }
+    }
 }
 
 let g = new WeightedGraph()
 
-g.addVertex("Loeuf")
-g.addVertex("Torse")
-g.addVertex("Hand")
-g.addEdge("Loeuf", "Torse", "Strong")
-g.addEdge("Loeuf", "Hand", "Super Strong")
+g.addVertex("a")
+g.addVertex("b")
+g.addVertex("c")
+g.addVertex("d")
+g.addVertex("e")
+g.addVertex("f")
+g.addEdge("a", "b", 3)
+g.addEdge("a", "c", 2)
+g.addEdge("c", "e", 1)
+g.addEdge("e", "f", 1)
+g.addEdge("b", "d", 1)
+g.addEdge("d", "f", 2)
 
-g.adjacencyList
+g.dijkstra("a", "e")
